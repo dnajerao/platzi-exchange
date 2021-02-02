@@ -3,8 +3,14 @@ import App from './App.vue'
 import '@/assets/css/tailwind.css'
 import router from '@/router'
 import { dollarFilter, percentFilter } from '@/filters'
+import { VueSpinners } from '@saeris/vue-spinners'
+import Chartkick from 'vue-chartkick'
+import Chart from 'chart.js'
 
-Vue.filter('dollar', dollarFilter);
+Vue.use(Chartkick.use(Chart))
+Vue.use(VueSpinners)
+
+Vue.filter('dollar', dollarFilter)
 Vue.filter('percent', percentFilter)
 Vue.config.productionTip = false
 
